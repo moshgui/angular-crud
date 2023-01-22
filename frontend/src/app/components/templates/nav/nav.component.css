@@ -1,12 +1,12 @@
 .side-nav {
     background-color: #3F51B5;
-    width: 200px;    
+    width: 250px;    
 }
 
 .side-nav a {
     color: #FFF;
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-size: 1.4rem;
+    font-weight: 500;
 }
 
 .side-nav i {
