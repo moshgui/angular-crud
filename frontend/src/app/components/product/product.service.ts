@@ -27,4 +27,9 @@ export class ProductService {
   create(product: Product): Observable<Product> {
     return this.http.post<Product>(this.baseURL, product);
   }
+
+  //requisicão para buscar os produtos no backend
+  read(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.baseURL);
+  }
 }
