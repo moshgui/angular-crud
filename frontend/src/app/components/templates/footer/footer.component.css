@@ -4,3 +4,7 @@
     display: flex;
     justify-content: flex-end;
 }
+
+span {
+    font-size: 0.8rem;
+}

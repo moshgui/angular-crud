@@ -7,16 +7,18 @@
     display: flex;
     align-items: center;
     text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;    
 }
 
 .header .logo {
-    max-height: 16rem;
+    max-height: 12rem;
 }
 
 .header .title-group {
-    padding-left: 1.5rem;
+    padding-left: 1rem;
 }
 
 .header .title-group i {
-    padding-right: 0.6rem;
+    padding-right: 0.4rem;
 }
