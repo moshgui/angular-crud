@@ -25,7 +25,7 @@ import { RedDirective } from './directives/red.directive';
     NavComponent,
     HomeComponent,
     ProductCrudComponent,
-    RedDirective
+    RedDirective,
   ],
   imports: [
     BrowserModule,
