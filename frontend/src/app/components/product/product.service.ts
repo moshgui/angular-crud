@@ -2,7 +2,8 @@ import { Product } from './product.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { catchError, Observable, map, EMPTY } from 'rxjs';
+import { catchError, Observable, EMPTY } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 
 @Injectable({
@@ -16,18 +17,27 @@ export class ProductService {
 
   //função para mostrar a mensagem ao criar o produto
   //acionada com o botão de product-create.component.html
-  showMessage(msg: string): void {
+  showMessage(msg: string, isError: boolean = false): void {
     this.snackBar.open(msg, 'Fechar', {
       duration: 3000,
       horizontalPosition: 'right',
-      verticalPosition: 'top' 
+      verticalPosition: 'top',
+      panelClass: isError ? ['msg-error'] : ['msg.success']
     })
   }
 
   //requisição http ao backend
   create(product: Product): Observable<Product> {
-    return this.http.post<Product>(this.baseURL, product);
+    return this.http.post<Product>(this.baseURL, product).pipe(
+      map((obj) => obj),
+      catchError(e => this.handleError(e))
+    );
   }
+
+  handleError(e: any): Observable<any> {
+    this.showMessage('Ocorreu um erro!', true);
+    return EMPTY    
+  };  
 
   //requisicão para buscar os produtos no backend
   read(): Observable<Product[]> {
