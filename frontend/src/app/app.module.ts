@@ -20,6 +20,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import {MatTooltipModule} from '@angular/material/tooltip';
 import { ProductReadComponent } from './components/product/product-read/product-read.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -62,7 +63,8 @@ registerLocaleData(localePt);
     MatInputModule,
     MatSortModule,
     MatPaginatorModule,
-    MatTableModule
+    MatTableModule,
+    MatTooltipModule
   ],
   providers: [{
     provide: LOCALE_ID,
